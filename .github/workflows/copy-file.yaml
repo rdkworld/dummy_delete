@@ -1,0 +1,56 @@
+name: Copy File to Target Repo
+
+on:
+  workflow_dispatch:  # Trigger manually
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v3
+        with:
+          ref: main  # Specify the source branc        
+
+      - name: Configure Git for target repo
+        run: |
+          git config --global user.email "rdkulkarni@gmail.com"
+          git config --global user.name "Raghavendra Kulkarni"
+
+      - name: Clone target repo
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/Farmers-FIS/fis_pocs_client.git
+          token: ${{ secrets.TARGET_REPO_TOKEN }}
+          path: target-repo
+          ref: master
+
+      - name: Copy file
+        run: |
+          cp copy_to_github_org.md target-repo/  # Copy file to target repo
+
+      - name: Commit changes to master branch
+        run: |
+          cd target-repo
+          git add copy_to_github_org.md
+          git commit -m "copy_to_github_org.md"
+          
+      - name: List branches
+        run: |
+          cd target-repo
+          git branch
+          git branch -r
+          git remote -v
+          git remote set-url origin https://github.com/Farmers-FIS/fis_pocs_client.git
+          git remote -v
+          pwd
+          ls
+          git status
+  
+      # - name: Print env variables
+      #   run: |
+      #     printenv
+      - name: Push changes to target repo
+        run: |
+          git push
+          
