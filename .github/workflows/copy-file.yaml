@@ -23,7 +23,7 @@ jobs:
           repository: Farmers-FIS/fis_pocs_client.git
           token: ${{ secrets.TARGET_REPO_TOKEN }}
           path: target-repo
-          ref: master
+          ref: main
 
       - name: Copy file
         run: |
