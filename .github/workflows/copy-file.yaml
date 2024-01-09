@@ -38,6 +38,7 @@ jobs:
       - name: List branches
         run: |
           cd target-repo
+          cat python_script.py
           git branch
           git branch -r
           git remote -v
