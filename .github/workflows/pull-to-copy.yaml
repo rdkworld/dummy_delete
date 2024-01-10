@@ -11,13 +11,13 @@ jobs:
       - name: Checkout Target Repo
         uses: actions/checkout@v4
         with:
-          repository: Farmers-FIS/fis_pocs_client.git
+          repository: Farmers-FIS/fis_pocs.git
           ref: master
           token: ${{ secrets.TARGET_REPO_TOKEN }}
       - name: Isolate Target Files
         run: |
           mkdir target-files
-          cp python_script.py target-files
+          cp copy_between_github_repos/app_on_emu.py target-files
           pwd
           ls -l
           ls target-files/
@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: target-repo
-          path: python_script.py  # Specify the files to include          
+          path: copy_between_github_repos/app_on_emu.py  # Specify the files to include          
           
       - name: Validate target
         run: |
