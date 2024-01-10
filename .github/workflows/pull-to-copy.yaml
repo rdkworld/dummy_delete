@@ -60,7 +60,7 @@ jobs:
           ls -l
 
           # Access files from the target repo
-          ls target-files/
+          ls target-repo/
           whoami
           
       - name: Commit to Source Repo
