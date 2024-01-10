@@ -73,5 +73,5 @@ jobs:
           git config --global user.name "Raghavendra Kulkarni EMU"
           #echo "Adding a comment" >> copy_to_github.md
           git add .
-          git commit -m "Copy file from artifact"
+          git commit -m "Copy file from source repo"
           git push --force https://github.com/rdkworld/dummy_delete.git HEAD:master
