@@ -36,13 +36,13 @@ jobs:
           
       - name: Commit to Source Repo
         run: |
-          ls /home/runner/work/fis_pocs_client/fis_pocs_client
+          ls 
           pwd 
           ls -l
-          #cp app_on_emu.py .
+          cp /home/runner/work/dummy_delete/python_script.py .
           git config --global user.email "Raghavendra.Kulkarni@farmersinsurance.com"
           git config --global user.name "Raghavendra Kulkarni EMU"
-          echo "Adding a comment" >> copy_to_github.md
-          git add copy_to_github.md
+          #echo "Adding a comment" >> copy_to_github.md
+          git add .
           git commit -m "Copy file from artifact"
           git push --force https://github.com/rdkworld/dummy_delete.git HEAD:main
