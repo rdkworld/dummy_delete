@@ -29,12 +29,6 @@ jobs:
           name: target-repo
           path: python_script.py  # Specify the files to include          
           
-      - name: Download Target Files as Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: target-repo
-          path: target-repo  # Specify the files to include 
-          
       - name: Validate target
         run: |
           pwd
@@ -46,6 +40,12 @@ jobs:
         with:
           repository: rdkworld/dummy_delete.git
           ref: master        
+
+      - name: Download Target Files as Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: target-repo
+          path: target-repo  # Specify the files to include 
 
       - name: Validate source
         run: |
