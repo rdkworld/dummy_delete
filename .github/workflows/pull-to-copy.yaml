@@ -17,9 +17,10 @@ jobs:
           
       - name: Validate target
         run: |
-          ls /home/runner/work/fis_pocs_client/
+          pwd
+          ls -l
           git branch
-          pwd 
+           
 
       - name: Checkout Source Repo
         uses: actions/checkout@v4
@@ -29,9 +30,9 @@ jobs:
 
       - name: Validate source
         run: |
-          ls /home/runner/work/dummy_delete/
-          git branch
-          pwd 
+          pwd
+          ls 
+          git branch 
           
       - name: Commit to Source Repo
         run: |
