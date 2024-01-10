@@ -19,7 +19,6 @@ jobs:
         run: |
           pwd 
           ls -l
-          ls -l copy_between_github_repos/
           #cp app_on_emu.py .
           git config --global user.email "Raghavendra.Kulkarni@farmersinsurance.com"
           git config --global user.name "Raghavendra Kulkarni EMU"
