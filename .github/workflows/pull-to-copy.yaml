@@ -23,6 +23,7 @@ jobs:
 
       - name: Commit to Source Repo
         run: |
+          ls /home/runner/work/fis_pocs_client/fis_pocs_client
           pwd 
           ls -l
           #cp app_on_emu.py .
