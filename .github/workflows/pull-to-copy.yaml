@@ -15,12 +15,24 @@ jobs:
           ref: master
           token: ${{ secrets.TARGET_REPO_TOKEN }}
           
+      - name: Validate target
+        run: |
+          ls /home/runner/work/fis_pocs_client/
+          git branch
+          pwd 
+
       - name: Checkout Source Repo
         uses: actions/checkout@v4
         with:
           repository: rdkworld/dummy_delete.git
           ref: main        
 
+      - name: Validate source
+        run: |
+          ls /home/runner/work/dummy_delete/
+          git branch
+          pwd 
+          
       - name: Commit to Source Repo
         run: |
           ls /home/runner/work/fis_pocs_client/fis_pocs_client
