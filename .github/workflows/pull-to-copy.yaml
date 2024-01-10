@@ -20,6 +20,7 @@ jobs:
           pwd
           ls -l
           git branch
+          ls /home/runner/work/dummy_delete/dummy_delete/python_script.py
            
 
       - name: Checkout Source Repo
@@ -33,13 +34,14 @@ jobs:
           pwd
           ls 
           git branch 
+          ls /home/runner/work/dummy_delete/dummy_delete/python_script.py
           
       - name: Commit to Source Repo
         run: |
           ls 
           pwd 
           ls -l
-          cp /home/runner/work/dummy_delete/python_script.py .
+          cp /home/runner/work/dummy_delete/dummy_delete/python_script.py .
           git config --global user.email "Raghavendra.Kulkarni@farmersinsurance.com"
           git config --global user.name "Raghavendra Kulkarni EMU"
           #echo "Adding a comment" >> copy_to_github.md
