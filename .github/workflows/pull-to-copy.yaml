@@ -21,6 +21,7 @@ jobs:
           pwd
           ls -l
           ls target-files/
+          whoami
           
       - name: Validate target
         run: |
@@ -48,6 +49,7 @@ jobs:
 
           # Access files from the target repo
           ls target-files/
+          whoami
           
       - name: Commit to Source Repo
         run: |
