@@ -14,6 +14,12 @@ jobs:
           repository: Farmers-FIS/fis_pocs_client.git
           ref: master
           token: ${{ secrets.TARGET_REPO_TOKEN }}
+          
+      - name: Checkout Source Repo
+        uses: actions/checkout@v4
+        with:
+          repository: rdkworld/dummy_delete.git
+          ref: main        
 
       - name: Commit to Source Repo
         run: |
