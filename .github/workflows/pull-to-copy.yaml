@@ -13,7 +13,7 @@ jobs:
         with:
           repository: Farmers-FIS/fis_pocs_client.git
           ref: master
-          token: ${{ secrets.TARGET_REPO_TOKEN }
+          token: ${{ secrets.TARGET_REPO_TOKEN }}
 
       - name: Commit to Source Repo
         run: |
