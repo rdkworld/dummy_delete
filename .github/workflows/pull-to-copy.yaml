@@ -1,0 +1,29 @@
+name: PULL from Target Repo to Copy File to Source Repo using Artifacts
+
+on:
+  workflow_dispatch: # Trigger manually
+
+jobs:
+  copy-to-source:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Target Repo
+        uses: actions/checkout@v4
+        with:
+          repository: Farmers-FIS/fis_pocs_client.git
+          ref: master
+          token: ${{ secrets.TARGET_REPO_TOKEN }
+
+      - name: Commit to Source Repo
+        run: |
+          pwd 
+          ls -l
+          ls -l copy_between_github_repos/
+          #cp app_on_emu.py .
+          git config --global user.email "Raghavendra.Kulkarni@farmersinsurance.com"
+          git config --global user.name "Raghavendra Kulkarni EMU"
+          echo "Adding a comment" >> copy_to_github.md
+          git add copy_to_github.md
+          git commit -m "Copy file from artifact"
+          git push --force https://github.com/rdkworld/dummy_delete.git HEAD:main
