@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: rdkworld/dummy_delete.git
-          ref: main        
+          ref: master        
 
       - name: Validate source
         run: |
@@ -47,4 +47,4 @@ jobs:
           #echo "Adding a comment" >> copy_to_github.md
           git add .
           git commit -m "Copy file from artifact"
-          git push --force https://github.com/rdkworld/dummy_delete.git HEAD:main
+          git push --force https://github.com/rdkworld/dummy_delete.git HEAD:master
